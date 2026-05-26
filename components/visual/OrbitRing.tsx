@@ -1,3 +1,21 @@
-'use client';
-import { motion } from 'framer-motion';
-export function OrbitRing({ className = '' }: { className?: string }) { return <motion.div className={`absolute rounded-[100%] border border-neon/60 shadow-[0_0_40px_rgba(139,92,246,.35)] ${className}`} animate={{ rotate: 360 }} transition={{ duration: 22, repeat: Infinity, ease: 'linear' }} />; }
+"use client";
+
+import { motion } from "framer-motion";
+
+type OrbitRingProps = {
+  className?: string;
+};
+
+export function OrbitRing({ className = "" }: OrbitRingProps) {
+  return (
+    <motion.div
+      aria-hidden
+      animate={{ rotate: 360 }}
+      transition={{ duration: 42, repeat: Infinity, ease: "linear" }}
+      className={`pointer-events-none absolute rounded-[50%] border border-neon/55 ${className}`}
+      style={{
+        boxShadow: "0 0 34px rgba(139,92,246,.42), inset 0 0 24px rgba(139,92,246,.14)",
+      }}
+    />
+  );
+}
