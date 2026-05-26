@@ -1,13 +1,2 @@
-import Image from 'next/image';
-import { Instagram } from 'lucide-react';
-import { instagramProjects } from '@/data/projects';
-
-export function InstagramProjects() {
-  return (
-    <section className="mt-20 rounded-[36px] border border-line bg-bgSoft/70 p-8">
-      <div className="mb-7 flex items-center justify-between"><h2 className="text-3xl font-semibold">Instagram Projects <span className="ml-2 rounded-full bg-neon/20 px-3 py-1 text-sm text-neon">12+</span></h2></div>
-      <div className="flex gap-4 overflow-x-auto pb-3">{instagramProjects.map((p) => <article key={p.id} className="glass min-w-[240px] rounded-3xl p-3"><div className="mb-2 flex items-center gap-2 text-xs text-textMuted"><Instagram size={14}/>Instagram Design</div><div className="relative h-72 overflow-hidden rounded-2xl"><Image src={p.image} alt={p.title} fill className="object-cover" /></div><h4 className="mt-3">{p.title}</h4></article>)}</div>
-      <button className="mt-8 rounded-full border border-line bg-white/5 px-6 py-3">View All Instagram Projects</button>
-    </section>
-  );
-}
+import { Instagram, ArrowLeft, ArrowRight } from 'lucide-react';import { instagramProjects } from '@/data/projects';import { InstagramCard } from './cards/InstagramCard';
+export function InstagramProjects(){return <section className='mx-auto mt-10 max-w-panel rounded-[34px] border border-white/10 glass-panel p-6 md:p-10'><div className='mb-6 flex flex-wrap items-center justify-between gap-3'><h3 className='flex items-center gap-2 text-3xl'><Instagram size={22}/>Instagram Projects <span className='rounded-full bg-neon/20 px-2 py-1 text-sm text-neon'>12+</span></h3><div className='flex items-center gap-2'><button className='rounded-full border border-white/20 p-2'><ArrowLeft size={14}/></button><button className='rounded-full border border-white/20 p-2'><ArrowRight size={14}/></button><button className='rounded-full border border-white/20 px-4 py-2 text-sm'>View All Instagram Projects</button></div></div><div className='flex gap-4 overflow-x-auto pb-2'>{instagramProjects.map(i=><InstagramCard key={i.id} item={i as any}/>)}</div></section>}

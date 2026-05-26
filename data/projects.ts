@@ -1,21 +1,18 @@
-export type Category = '3D Animation' | 'Character Design' | 'Product Visual' | 'Branding' | 'Motion Graphics' | 'Instagram Design';
-
-export interface Project {
-  id: number;
-  title: string;
-  category: Category;
-  image: string;
-  featured: boolean;
-}
-
-const categories: Category[] = ['3D Animation', 'Character Design', 'Product Visual', 'Branding', 'Motion Graphics', 'Instagram Design'];
-
-export const projects: Project[] = Array.from({ length: 200 }, (_, i) => ({
-  id: i + 1,
-  title: `Project ${String(i + 1).padStart(3, '0')}`,
-  category: categories[i % categories.length],
-  image: `https://images.unsplash.com/photo-${1498050108023 + i}-c5249f4df085?auto=format&fit=crop&w=1000&q=80`,
-  featured: i < 18
-}));
-
-export const instagramProjects = projects.filter((item) => item.category === 'Instagram Design').slice(0, 12);
+import { VisualVariant } from '@/components/visual/ProjectVisual';
+export type Category = '3D Animation'|'3D Character'|'Branding'|'Motion Design'|'3D Design'|'Product Visual'|'Instagram Design';
+export interface ProjectItem{ id:number; title:string; category:Category; variant:VisualVariant; }
+export const projects:ProjectItem[]=[
+{id:1,title:'Abstract Motion',category:'3D Animation',variant:'abstract-motion'},
+{id:2,title:'Product Animation',category:'3D Animation',variant:'product-ring'},
+{id:3,title:'Character Design',category:'3D Character',variant:'character'},
+{id:4,title:'Brand Visual',category:'Branding',variant:'brand-symbol'},
+{id:5,title:'Motion Graphics',category:'Motion Design',variant:'motion-sphere'},
+{id:6,title:'Futuristic Helmet',category:'3D Design',variant:'helmet'},
+{id:7,title:'Glass Cube',category:'3D Animation',variant:'glass-cube'},
+{id:8,title:'Sneaker Visual',category:'Product Visual',variant:'sneaker'},
+{id:9,title:'Bottle Campaign',category:'Product Visual',variant:'bottle'},
+{id:10,title:'Watch Visual',category:'Product Visual',variant:'watch'},
+{id:11,title:'Social Campaign',category:'Instagram Design',variant:'instagram'},
+{id:12,title:'Poster Design',category:'Branding',variant:'abstract-motion'}
+];
+export const instagramProjects=['Coffee Land','Fit Move','Glow Skincare','Travel More','Burger House','Minimal Interior','Tech Future'].map((title,id)=>({id:id+1,title,category:'Instagram Design' as Category,variant:'instagram' as VisualVariant}));

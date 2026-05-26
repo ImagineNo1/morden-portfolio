@@ -1,27 +1,5 @@
 'use client';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { Button } from './Button';
-import { Floating3DObjects } from './Floating3DObjects';
-import { SectionIndicator } from './SectionIndicator';
-
-export function HeroSection() {
-  return (
-    <section className="relative overflow-hidden rounded-[42px] border border-line bg-bgSoft p-8 md:p-14">
-      <Floating3DObjects />
-      <SectionIndicator />
-      <div className="grid items-end gap-10 lg:grid-cols-2">
-        <div className="relative z-10">
-          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-5xl font-semibold leading-tight md:text-7xl">Bringing Ideas<br/>to Life in 3D</motion.h1>
-          <p className="mt-6 text-textMuted">3D Design · Animation · Visual Storytelling</p>
-          <div className="mt-10"><Button>Explore Work</Button></div>
-          <p className="mt-16 text-sm text-textMuted"><span className="text-accent">02</span> /05 Selected Projects</p>
-        </div>
-        <div className="relative h-[520px] w-full overflow-hidden rounded-3xl border border-line">
-          <Image src="https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=1200&q=80" alt="night portrait" fill className="object-cover object-center" priority />
-          <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-bg/10" />
-        </div>
-      </div>
-    </section>
-  );
-}
+import Image from 'next/image';import { useState } from 'react';
+import { MagneticButton } from './ui/MagneticButton';import { SectionIndicator } from './SectionIndicator';import { OrbitRing } from './visual/OrbitRing';import { FloatingOrb } from './visual/FloatingOrb';
+const portrait='/images/hero-portrait.jpg';
+export function HeroSection(){const [src,setSrc]=useState(portrait);return <section className='relative mx-auto max-w-panel min-h-[600px] overflow-hidden rounded-[34px] border border-white/10 glass-panel p-6 md:p-12'><SectionIndicator active={2}/><div className='grid min-h-[540px] items-end gap-8 lg:grid-cols-[45%_55%]'><div className='z-10'><p className='mb-8 text-xs uppercase tracking-[0.2em] text-neon'>3D Design · Animation · Visual Storytelling</p><h1 className='text-5xl font-semibold leading-[1.02] md:text-[74px]'>Bringing Ideas<br/>to Life in <span className='text-gradient-purple'>3D</span></h1><div className='mt-10'><MagneticButton label='Explore Work'/></div><p className='mt-20 text-sm text-white/60'><span className='text-accent'>02</span> /05 Selected Projects</p></div><div className='relative h-[540px] overflow-hidden rounded-[30px] border border-white/10'><Image src={src} onError={()=>setSrc('/images/portrait.svg')} alt='Designer portrait' fill className='object-cover object-right md:object-[70%_40%]'/><div className='absolute inset-0 bg-gradient-to-l from-black/20 via-black/20 to-black/70'/><OrbitRing className='left-[12%] top-[14%] h-72 w-72'/><FloatingOrb className='right-16 top-16 h-24 w-24'/><FloatingOrb className='left-8 bottom-16 h-16 w-16' duration={12}/></div></div></section>}

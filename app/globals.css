@@ -3,16 +3,19 @@
 @tailwind utilities;
 
 :root { color-scheme: dark; }
-
+html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  font-family: var(--font-geist), Inter, sans-serif;
-  background: radial-gradient(circle at 75% 20%, rgba(124,58,237,0.2), transparent 45%), #030712;
-  color: white;
+  font-family: var(--font-geist), Inter, system-ui, sans-serif;
+  color: #fff;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(124,58,237,.28), transparent 38%),
+    radial-gradient(circle at 84% 24%, rgba(37,99,235,.18), transparent 42%),
+    #030712;
 }
-
-.glass {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.1);
-  backdrop-filter: blur(12px);
-}
+::selection { background: rgba(139,92,246,.42); color: #fff; }
+.glass-panel{background:rgba(3,7,18,.82);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(16px)}
+.glass-card{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(10px)}
+.neon-glow{box-shadow:0 0 44px rgba(139,92,246,.32)}
+.text-gradient-purple{background:linear-gradient(90deg,#A78BFA,#7C3AED);-webkit-background-clip:text;color:transparent}
+.noise-overlay::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) .6px, transparent .6px);background-size:3px 3px;opacity:.08;pointer-events:none}

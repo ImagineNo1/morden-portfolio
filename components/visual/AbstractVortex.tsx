@@ -1,0 +1,2 @@
+'use client';import { motion } from 'framer-motion';
+export function AbstractVortex({className=''}:{className?:string}){return <motion.div className={`absolute ${className}`} animate={{rotate:[0,360]}} transition={{duration:60,repeat:Infinity,ease:'linear'}}><div className='h-64 w-64 rounded-full border border-neon/40'/><div className='absolute inset-6 rounded-full border border-neon/30'/><div className='absolute inset-12 rounded-full border border-neon/20'/></motion.div>}

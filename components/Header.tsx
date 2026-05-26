@@ -1,17 +1,2 @@
-'use client';
-import Link from 'next/link';
-import { Menu } from 'lucide-react';
-
-export function Header() {
-  return (
-    <header className="fixed left-0 top-0 z-50 w-full border-b border-white/5 bg-bg/70 backdrop-blur-xl">
-      <nav className="mx-auto flex max-w-frame items-center justify-between px-4 py-5 md:px-8">
-        <Link href="/" className="text-lg font-semibold tracking-[0.3em]">SEXIMON</Link>
-        <div className="hidden items-center gap-10 text-sm text-textMuted md:flex">
-          <Link href="/projects">Work</Link><Link href="/about">About</Link><Link href="/process">Process</Link><Link href="/contact">Contact</Link>
-        </div>
-        <button aria-label="menu" className="rounded-full border border-line p-2"><Menu size={18} /></button>
-      </nav>
-    </header>
-  );
-}
+import Link from 'next/link';import { Menu } from 'lucide-react';
+export function Header(){return <header className='fixed top-0 z-40 w-full border-b border-white/10 bg-bg/55 backdrop-blur-xl'><div className='mx-auto flex h-20 max-w-frame items-center justify-between px-4 md:px-8'><Link href='/' className='text-sm tracking-[0.5em]'>S E X I M O N</Link><nav className='hidden items-center gap-8 text-sm text-white/70 md:flex'><a href='#projects'>Work</a><a href='#about'>About</a><a href='#process'>Process</a><a href='#contact'>Contact</a></nav><button className='rounded-full border border-white/20 p-2.5'><Menu size={17}/></button></div></header>}

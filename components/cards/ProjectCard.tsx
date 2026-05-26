@@ -1,0 +1,4 @@
+'use client';
+import { ArrowUpRight } from 'lucide-react';import { motion } from 'framer-motion';
+import { ProjectItem } from '@/data/projects';import { ProjectVisual } from '@/components/visual/ProjectVisual';
+export function ProjectCard({project}:{project:ProjectItem}){return <motion.article whileHover={{y:-8}} className='group glass-card rounded-3xl p-3'><div className='h-56'><ProjectVisual variant={project.variant}/></div><div className='mt-3 flex items-end justify-between'><div><p className='text-xs text-white/60'>{String(project.id).padStart(2,'0')}</p><h3 className='font-medium'>{project.title}</h3><p className='text-xs text-textMuted'>{project.category}</p></div><button className='rounded-full border border-white/25 p-2 transition group-hover:rotate-45 group-hover:border-neon'><ArrowUpRight size={16}/></button></div></motion.article>}
