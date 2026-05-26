@@ -1,0 +1,4 @@
+'use client';
+import { motion } from 'framer-motion';
+const items = ['2023 – Present: Freelance Designer & 3D Animator','2021 – 2023: 3D Animator','2019 – 2021: Motion Designer','2017 – 2019: Graphic Designer'];
+export function ExperienceTimeline(){return <section className="rounded-[36px] border border-line bg-bgSoft p-8"><h1 className="text-5xl font-semibold">My Experience</h1><div className="relative mt-10 space-y-8 pl-8 before:absolute before:left-2 before:top-0 before:h-full before:w-px before:bg-neon/70">{items.map((it,i)=><motion.div key={it} initial={{opacity:0,x:-20}} whileInView={{opacity:1,x:0}} viewport={{once:true}} transition={{delay:i*0.1}} className="glass relative rounded-2xl p-5 before:absolute before:-left-[29px] before:top-7 before:h-3 before:w-3 before:rounded-full before:bg-neon">{it}</motion.div>)}</div></section>}
