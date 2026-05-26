@@ -1,21 +1,14 @@
 import { SlidersHorizontal } from "lucide-react";
 import { ProjectCard } from "@/components/cards/ProjectCard";
-import { projects } from "@/data/projects";
 import { Reveal } from "@/components/ui/Reveal";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { SectionIndicator } from "@/components/SectionIndicator";
 
-const categories = [
-  "All Categories",
-  "3D Animation",
-  "Character Design",
-  "Product Visual",
-  "Branding",
-  "Motion Graphics",
-  "Instagram Design",
-];
+import type { SiteContentShape } from "@/lib/defaultContent";
 
-export function ProjectsSection() {
+type WorkContent = SiteContentShape["work"];
+
+export function ProjectsSection({ content }: { content: WorkContent }) {
   return (
     <section className="glass-panel p-6 md:p-10 lg:p-12">
       <SectionIndicator active={2} />
@@ -23,16 +16,16 @@ export function ProjectsSection() {
       <Reveal className="flex flex-col gap-7">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.26em] text-neon">My Work</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.26em] text-neon">{content.label}</p>
 
             <h1 className="mt-4 text-[44px] font-semibold leading-[1] tracking-[-0.045em] md:text-[64px]">
-              All
+              {content.allTitle}
               <br />
-              <span className="text-gradient-purple">Projects</span>
+              <span className="text-gradient-purple">{content.allHighlight}</span>
             </h1>
 
             <p className="mt-5 max-w-sm leading-7 text-white/60">
-              Explore my complete collection of visual, motion and 3D work.
+              {content.allDescription}
             </p>
           </div>
 
@@ -41,7 +34,7 @@ export function ProjectsSection() {
 
         <div className="flex flex-col gap-5 border-y border-white/10 py-6 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex flex-wrap gap-3">
-            {categories.map((category, index) => (
+            {content.categories.map((category, index) => (
               <button
                 key={category}
                 className={`rounded-full border px-4 py-2 text-xs font-semibold transition ${
@@ -63,7 +56,7 @@ export function ProjectsSection() {
       </Reveal>
 
       <Reveal className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3" delay={0.08}>
-        {projects.map((project) => (
+        {content.projects.map((project) => (
           <ProjectCard key={project.number} project={project} />
         ))}
       </Reveal>
