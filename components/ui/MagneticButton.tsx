@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import type { ReactNode } from "react";
 
@@ -10,7 +11,7 @@ type MagneticButtonProps = {
 
 export function MagneticButton({
   children,
-  href = "#work",
+  href = "/work",
   variant = "outline",
   className = "",
 }: MagneticButtonProps) {
@@ -20,12 +21,15 @@ export function MagneticButton({
       : "border-white/15 bg-white/[0.035] text-white hover:border-neon/50 hover:bg-white/[0.07]";
 
   return (
-    <a
+    <Link
       href={href}
       className={`group inline-flex items-center gap-2 rounded-full border px-5 py-3 text-sm font-semibold transition duration-300 ${classes} ${className}`}
     >
       {children}
-      <ArrowUpRight size={16} className="transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-    </a>
+      <ArrowUpRight
+        size={16}
+        className="transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+      />
+    </Link>
   );
 }

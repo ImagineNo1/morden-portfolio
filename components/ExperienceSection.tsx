@@ -31,11 +31,13 @@ export function ExperienceSection() {
       <Reveal className="grid gap-10 lg:grid-cols-[38%_30%_32%]">
         <div className="flex flex-col justify-center">
           <p className="text-xs font-semibold uppercase tracking-[0.26em] text-neon">Experience</p>
+
           <h2 className="mt-4 text-[44px] font-semibold leading-[1] tracking-[-0.045em] md:text-[64px]">
             My
             <br />
             <span className="text-gradient-purple">Experience</span>
           </h2>
+
           <p className="mt-5 max-w-sm leading-7 text-white/60">
             My professional journey and career highlights.
           </p>
@@ -57,7 +59,12 @@ export function ExperienceSection() {
         </div>
 
         <div className="relative hidden min-h-[500px] overflow-hidden rounded-[30px] border border-white/10 bg-black lg:block">
-          <Image src="/images/hero-portrait.jpg" alt="Experience portrait" fill className="object-cover object-center" />
+          <Image
+            src="/images/hero-portrait.jpg"
+            alt="Experience portrait"
+            fill
+            className="object-cover object-[center_42%]"
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30" />
           <FloatingOrb className="left-8 top-16" size={42} />
         </div>
