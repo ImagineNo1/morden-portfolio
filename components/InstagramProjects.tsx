@@ -1,13 +1,2 @@
-import Image from 'next/image';
-import { Instagram } from 'lucide-react';
-import { instagramProjects } from '@/data/projects';
-
-export function InstagramProjects() {
-  return (
-    <section className="mt-20 rounded-[36px] border border-line bg-bgSoft/70 p-8">
-      <div className="mb-7 flex items-center justify-between"><h2 className="text-3xl font-semibold">Instagram Projects <span className="ml-2 rounded-full bg-neon/20 px-3 py-1 text-sm text-neon">12+</span></h2></div>
-      <div className="flex gap-4 overflow-x-auto pb-3">{instagramProjects.map((p) => <article key={p.id} className="glass min-w-[240px] rounded-3xl p-3"><div className="mb-2 flex items-center gap-2 text-xs text-textMuted"><Instagram size={14}/>Instagram Design</div><div className="relative h-72 overflow-hidden rounded-2xl"><Image src={p.image} alt={p.title} fill className="object-cover" /></div><h4 className="mt-3">{p.title}</h4></article>)}</div>
-      <button className="mt-8 rounded-full border border-line bg-white/5 px-6 py-3">View All Instagram Projects</button>
-    </section>
-  );
-}
+import {instagramProjects} from '@/data/projects';import {Instagram,MoreHorizontal,ArrowLeft,ArrowRight} from 'lucide-react';
+export function InstagramProjects(){return <section className="mt-14 rounded-[30px] border border-white/10 bg-bgSoft/80 p-6"><div className="mb-6 flex flex-wrap items-center justify-between gap-3"><h3 className="flex items-center gap-2 text-2xl font-semibold"><Instagram size={22}/>Instagram Projects <span className='rounded-full bg-neon/20 px-2 py-0.5 text-sm text-neon'>12+</span></h3><div className='flex items-center gap-2'><button className='hidden rounded-full border border-white/20 p-2 md:block'><ArrowLeft size={15}/></button><button className='hidden rounded-full border border-white/20 p-2 md:block'><ArrowRight size={15}/></button><button className="rounded-full border border-white/20 px-4 py-2 text-sm">View All Instagram Projects</button></div></div><div className="flex gap-4 overflow-x-auto pb-2">{instagramProjects.map(p=><article key={p.id} className="min-w-[210px] rounded-3xl border border-white/10 bg-black/45 p-3"><div className='mb-2 flex items-center justify-between text-xs text-white/60'><span className='flex items-center gap-2'><span className='h-5 w-5 rounded-full bg-neon/50'/>seximon</span><MoreHorizontal size={13}/></div><div className='h-[280px] rounded-2xl' style={{background:`linear-gradient(160deg, ${p.colorA}, ${p.colorB})`}}/><p className='mt-3 text-xs text-white/70'>{String(p.id).padStart(2,'0')}</p><h4>{p.title}</h4><p className='text-xs text-white/60'>{p.category}</p></article>)}</div></section>}

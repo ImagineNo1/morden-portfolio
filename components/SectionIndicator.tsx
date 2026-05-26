@@ -1,9 +1,1 @@
-export function SectionIndicator() {
-  return (
-    <div className="absolute right-8 top-1/2 hidden -translate-y-1/2 flex-col gap-3 text-sm md:flex">
-      {[1, 2, 3, 4, 5].map((num) => (
-        <span key={num} className={num === 2 ? 'text-accent' : 'text-white/45'}>{String(num).padStart(2, '0')}</span>
-      ))}
-    </div>
-  );
-}
+export function SectionIndicator(){return <div className="absolute right-5 top-1/2 hidden -translate-y-1/2 flex-col gap-3 text-sm lg:flex">{[1,2,3,4,5].map(n=><span key={n} className={n===2?'text-accent':'text-white/35'}>{String(n).padStart(2,'0')}</span>)}</div>}

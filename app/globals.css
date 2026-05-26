@@ -1,18 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root { color-scheme: dark; }
-
-body {
-  margin: 0;
-  font-family: var(--font-geist), Inter, sans-serif;
-  background: radial-gradient(circle at 75% 20%, rgba(124,58,237,0.2), transparent 45%), #030712;
-  color: white;
-}
-
-.glass {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.1);
-  backdrop-filter: blur(12px);
-}
+:root{color-scheme:dark}
+body{margin:0;font-family:var(--font-geist),Inter,sans-serif;background:radial-gradient(circle at 20% 0%,rgba(124,58,237,.25),transparent 38%),radial-gradient(circle at 80% 30%,rgba(30,64,175,.2),transparent 42%),#030712;color:white}
+.glass{background:rgba(3,7,18,.82);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(16px)}
+.neon-border{box-shadow:0 0 40px rgba(139,92,246,.22),inset 0 0 20px rgba(139,92,246,.12)}
