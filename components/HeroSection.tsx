@@ -1,27 +1,3 @@
 'use client';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { Button } from './Button';
-import { Floating3DObjects } from './Floating3DObjects';
-import { SectionIndicator } from './SectionIndicator';
-
-export function HeroSection() {
-  return (
-    <section className="relative overflow-hidden rounded-[42px] border border-line bg-bgSoft p-8 md:p-14">
-      <Floating3DObjects />
-      <SectionIndicator />
-      <div className="grid items-end gap-10 lg:grid-cols-2">
-        <div className="relative z-10">
-          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-5xl font-semibold leading-tight md:text-7xl">Bringing Ideas<br/>to Life in 3D</motion.h1>
-          <p className="mt-6 text-textMuted">3D Design · Animation · Visual Storytelling</p>
-          <div className="mt-10"><Button>Explore Work</Button></div>
-          <p className="mt-16 text-sm text-textMuted"><span className="text-accent">02</span> /05 Selected Projects</p>
-        </div>
-        <div className="relative h-[520px] w-full overflow-hidden rounded-3xl border border-line">
-          <Image src="https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=1200&q=80" alt="night portrait" fill className="object-cover object-center" priority />
-          <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-bg/10" />
-        </div>
-      </div>
-    </section>
-  );
-}
+import Image from 'next/image';import {motion} from 'framer-motion';import {SectionIndicator} from './SectionIndicator';import {Menu,ArrowRight} from 'lucide-react';
+export function HeroSection(){return <section className="relative mx-auto max-w-[1320px] overflow-hidden rounded-[34px] border border-line bg-bgSoft/90 p-6 md:p-12"><SectionIndicator/><button className="absolute right-4 top-1/2 z-20 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-line bg-black/50 lg:flex"><Menu size={18}/></button><div className="grid gap-8 lg:grid-cols-2"><div className="z-10 flex flex-col justify-between"><div><p className="mb-8 text-sm text-white/70">3D Design · Animation · Visual Storytelling</p><motion.h1 initial={{opacity:0,y:24}} animate={{opacity:1,y:0}} transition={{duration:.9,ease:'easeOut'}} className="text-5xl font-semibold leading-[1.02] md:text-7xl">Bringing Ideas<br/>to Life in <span className='text-neon'>3D</span></motion.h1></div><div className="mt-12 space-y-8"><button className="inline-flex items-center gap-2 rounded-full border border-white/25 px-5 py-2.5 text-sm">Explore Work <ArrowRight size={15}/></button><p className="text-sm text-white/60"><span className="text-accent">02</span> /05 Selected Projects</p></div></div><motion.div initial={{scale:1.04,opacity:.8}} animate={{scale:1,opacity:1}} transition={{duration:1.4}} className="relative h-[520px] overflow-hidden rounded-[30px] border border-white/10"><Image src="/images/portrait.svg" alt="Designer portrait" fill className="object-cover object-right" priority/><div className="absolute inset-0 bg-gradient-to-l from-black/30 via-black/20 to-black/70"/><motion.div animate={{rotate:360}} transition={{duration:45,repeat:Infinity,ease:'linear'}} className="absolute left-[14%] top-[18%] h-72 w-72 rounded-full border border-neon/50"/><motion.div animate={{y:[0,-14,0]}} transition={{repeat:Infinity,duration:8}} className="absolute right-16 top-20 h-20 w-20 rounded-full bg-neon/30 blur-xl"/></motion.div></div></section>}

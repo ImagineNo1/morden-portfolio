@@ -1,20 +1,2 @@
-'use client';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
-import { Project } from '@/data/projects';
-
-export function ProjectCard({ project }: { project: Project }) {
-  return (
-    <motion.article whileHover={{ y: -6, rotateX: 2, rotateY: -2 }} className="glass group rounded-3xl p-4">
-      <div className="relative h-52 overflow-hidden rounded-2xl">
-        <Image src={project.image} alt={project.title} fill className="object-cover transition duration-500 group-hover:scale-105" />
-      </div>
-      <p className="mt-4 text-xs text-accent">#{String(project.id).padStart(3, '0')}</p>
-      <div className="mt-2 flex items-center justify-between">
-        <div><h3 className="font-medium">{project.title}</h3><p className="text-sm text-textMuted">{project.category}</p></div>
-        <button className="rounded-full border border-line p-2 group-hover:border-neon"><ArrowUpRight size={16} /></button>
-      </div>
-    </motion.article>
-  );
-}
+'use client';import {Project} from '@/data/projects';import {motion} from 'framer-motion';import {ArrowUpRight} from 'lucide-react';
+export function ProjectCard({project}:{project:Project}){return <motion.article whileHover={{y:-8}} className="group relative h-[238px] overflow-hidden rounded-2xl border border-white/10 bg-black/40 p-4 transition hover:border-neon/70"><div className="absolute inset-0" style={{background:`radial-gradient(circle at 20% 15%, ${project.colorB}80, transparent 40%), linear-gradient(145deg, ${project.colorA}, #060b1b)`}}/><div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"/><p className="relative text-xs text-white/70">{String(project.id).padStart(2,'0')}</p><div className="relative mt-32 flex items-end justify-between"><div><h3 className="font-medium">{project.title}</h3><p className="text-xs text-white/60">{project.category}</p></div><span className="rounded-full border border-white/30 p-2 transition group-hover:rotate-45 group-hover:border-neon"><ArrowUpRight size={16}/></span></div></motion.article>}

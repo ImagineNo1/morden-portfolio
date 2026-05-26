@@ -1,19 +1,4 @@
 'use client';
-import { useMemo, useState } from 'react';
-import { projects } from '@/data/projects';
-import { ProjectCard } from './ProjectCard';
-
-const tabs = ['All Categories', '3D Animation', 'Character Design', 'Product Visual', 'Branding', 'Motion Graphics', 'Instagram Design'] as const;
-
-export function ProjectGrid() {
-  const [active, setActive] = useState<(typeof tabs)[number]>('All Categories');
-  const [count, setCount] = useState(8);
-  const filtered = useMemo(() => projects.filter((p) => p.featured && (active === 'All Categories' || p.category === active)), [active]);
-  return (
-    <section className="mt-8">
-      <div className="mb-8 flex flex-wrap gap-3">{tabs.map((tab) => <button key={tab} onClick={() => setActive(tab)} className={`rounded-full border px-4 py-2 text-sm ${active===tab?'border-neon bg-neon/20':'border-line bg-white/5'}`}>{tab}</button>)}</div>
-      <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">{filtered.slice(0, count).map((project) => <ProjectCard key={project.id} project={project} />)}</div>
-      <div className="mt-10 flex gap-3"><button onClick={() => setCount((c) => c + 4)} className="rounded-full border border-line bg-white/5 px-6 py-3">Load More Projects</button><button className="rounded-full border border-neon bg-neon/20 px-6 py-3">View Featured</button></div>
-    </section>
-  );
-}
+import {useState} from 'react';import {projects} from '@/data/projects';import {ProjectCard} from './ProjectCard';
+const tabs=['All Categories','3D Animation','Character Design','Product Visual','Branding','Motion Graphics'];
+export function ProjectGrid(){const [active,setActive]=useState('All Categories');const filtered=projects.filter(p=>active==='All Categories'||p.category===active);return <section className='mt-6'><div className='mb-6 flex flex-wrap items-center justify-between gap-3'><div className='flex flex-wrap gap-2'>{tabs.map(t=><button key={t} onClick={()=>setActive(t)} className={`rounded-full border px-4 py-2 text-xs ${active===t?'border-neon bg-neon/20':'border-white/20 bg-white/5'}`}>{t}</button>)}</div><div className='flex gap-2'><button className='rounded-full border border-white/20 px-4 py-2 text-sm'>Filter Projects</button><button className='rounded-full border border-neon/60 bg-neon/15 px-4 py-2 text-sm'>View Featured</button></div></div><div className='grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>{filtered.map(project=><ProjectCard key={project.id} project={project}/>)}</div></section>}
