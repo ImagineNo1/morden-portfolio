@@ -44,7 +44,7 @@ export function Header() {
 
         <button
           aria-label="Open menu"
-          className="grid h-10 w-10 place-items-center rounded-full border border-white/15 bg-white/[0.03] text-white/80 transition hover:border-neon/50 hover:text-white"
+          className="grid h-10 w-10 place-items-center rounded-full border border-white/15 bg-white/[0.03] text-white/80 transition hover:border-neon/50 hover:text-white md:hidden"
         >
           <Menu size={18} />
         </button>

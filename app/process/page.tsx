@@ -1,5 +1,7 @@
 import { ProcessSection } from "@/components/ProcessSection";
+import { getSiteContent } from "@/lib/siteContent";
 
-export default function ProcessPage() {
-  return <ProcessSection />;
+export default async function ProcessPage() {
+  const content = await getSiteContent();
+  return <ProcessSection content={content.process} />;
 }
