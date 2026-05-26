@@ -1,6 +1,8 @@
-import { InstagramProjects } from '@/components/InstagramProjects';
-import { ProjectsSection } from '@/components/ProjectsSection';
+import { InstagramProjects } from "@/components/InstagramProjects";
+import { ProjectsSection } from "@/components/ProjectsSection";
+import { getSiteContent } from "@/lib/siteContent";
 
-export default function ProjectsPage() {
-  return <div className='mx-auto max-w-[1320px] space-y-8 px-4 pb-16 pt-28 md:px-8'><ProjectsSection /><InstagramProjects /></div>;
+export default async function ProjectsPage() {
+  const content = await getSiteContent();
+  return <div className="flex flex-col gap-10"><ProjectsSection content={content.work} /><InstagramProjects content={content.work} /></div>;
 }
