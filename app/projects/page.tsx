@@ -1,2 +1,6 @@
-import Image from 'next/image';import {ProjectGrid} from '@/components/ProjectGrid';import {InstagramProjects} from '@/components/InstagramProjects';import {SectionIndicator} from '@/components/SectionIndicator';
-export default function ProjectsPage(){return <div className='space-y-8'><section className='relative overflow-hidden rounded-[34px] border border-white/10 bg-bgSoft p-7 md:p-10'><SectionIndicator/><Image src='/images/portrait.svg' alt='portrait backdrop' fill className='object-cover object-right opacity-35'/><div className='absolute inset-0 bg-gradient-to-r from-[#030712] via-[#030712]/90 to-transparent'/><div className='relative z-10 flex flex-wrap items-end justify-between gap-6'><div><h1 className='text-6xl font-semibold leading-none'>All <span className='text-neon'>Projects</span></h1><p className='mt-4 text-white/65'>Explore my complete collection of work.</p></div><button className='rounded-full border border-white/25 px-5 py-2 text-sm'>Sort by · Latest</button></div></section><ProjectGrid/><InstagramProjects/></div>}
+import { InstagramProjects } from '@/components/InstagramProjects';
+import { ProjectsSection } from '@/components/ProjectsSection';
+
+export default function ProjectsPage() {
+  return <div className='mx-auto max-w-[1320px] space-y-8 px-4 pb-16 pt-28 md:px-8'><ProjectsSection /><InstagramProjects /></div>;
+}

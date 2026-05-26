@@ -1,7 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-:root{color-scheme:dark}
-body{margin:0;font-family:var(--font-geist),Inter,sans-serif;background:radial-gradient(circle at 20% 0%,rgba(124,58,237,.25),transparent 38%),radial-gradient(circle at 80% 30%,rgba(30,64,175,.2),transparent 42%),#030712;color:white}
-.glass{background:rgba(3,7,18,.82);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(16px)}
-.neon-border{box-shadow:0 0 40px rgba(139,92,246,.22),inset 0 0 20px rgba(139,92,246,.12)}
+
+:root { color-scheme: dark; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font-inter), Inter, system-ui, sans-serif;
+  background:
+    radial-gradient(circle at 14% 0%, rgba(139, 92, 246, 0.28), transparent 33%),
+    radial-gradient(circle at 88% 26%, rgba(45, 71, 187, 0.24), transparent 36%),
+    #030712;
+  color: #fff;
+}
+::selection { background: rgba(139, 92, 246, 0.5); color: #fff; }
+
+.glass-panel { @apply rounded-[2rem] border border-border bg-card/90 backdrop-blur-2xl; }
+.glass-card { @apply rounded-3xl border border-border bg-card backdrop-blur-xl; }
+.neon-glow { box-shadow: 0 0 60px rgba(139, 92, 246, 0.28); }
+.text-gradient-purple {
+  background: linear-gradient(120deg, #c4b5fd 5%, #8b5cf6 45%, #7c3aed 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.noise-overlay::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none; opacity: .07;
+  background-image: radial-gradient(rgba(255,255,255,.35) .5px, transparent .5px);
+  background-size: 4px 4px;
+}
