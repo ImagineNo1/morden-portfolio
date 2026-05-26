@@ -8,20 +8,23 @@ export function FeaturedProjects() {
   const small = projects.slice(1, 5);
 
   return (
-    <section id="work" className="glass-panel p-6 md:p-10 lg:p-12">
+    <section className="glass-panel p-6 md:p-10 lg:p-12">
       <Reveal className="grid gap-8 lg:grid-cols-[36%_64%]">
         <div className="flex flex-col justify-center">
           <p className="text-xs font-semibold uppercase tracking-[0.26em] text-neon">My Work</p>
-          <h2 className="mt-4 text-[44px] font-semibold leading-[1] tracking-[-0.045em] md:text-[62px]">
+
+          <h1 className="mt-4 text-[44px] font-semibold leading-[1] tracking-[-0.045em] md:text-[62px]">
             Featured
             <br />
             <span className="text-gradient-purple">Projects</span>
-          </h2>
+          </h1>
+
           <p className="mt-5 max-w-xs leading-7 text-white/60">
             A selection of recent 3D, animation, branding and motion projects.
           </p>
+
           <div className="mt-8">
-            <MagneticButton href="#projects">View All Works</MagneticButton>
+            <MagneticButton href="/work">View All Works</MagneticButton>
           </div>
         </div>
 
@@ -32,9 +35,9 @@ export function FeaturedProjects() {
           <div className="glass-card absolute right-7 top-1/2 w-[230px] -translate-y-1/2 p-6">
             <p className="text-lg font-semibold text-white">01</p>
             <h3 className="mt-5 text-2xl font-semibold">Abstract Motion</h3>
-            <p className="mt-3 text-sm leading-6 text-white/55">3D Animation Motion Design</p>
+            <p className="mt-3 text-sm leading-6 text-white/55">3D Animation / Motion Design</p>
             <div className="mt-6">
-              <MagneticButton href="#projects">View Project</MagneticButton>
+              <MagneticButton href="/work">View Project</MagneticButton>
             </div>
           </div>
         </div>

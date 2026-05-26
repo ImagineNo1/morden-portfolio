@@ -1,2 +1,11 @@
-import { AboutSection } from '@/components/AboutSection';
-export default function AboutPage(){ return <div className='mx-auto max-w-[1320px] px-4 pb-16 pt-28 md:px-8'><AboutSection/></div>; }
+import { AboutSection } from "@/components/AboutSection";
+import { ExperienceSection } from "@/components/ExperienceSection";
+
+export default function AboutPage() {
+  return (
+    <div className="flex flex-col gap-10">
+      <AboutSection />
+      <ExperienceSection />
+    </div>
+  );
+}
